@@ -80,6 +80,7 @@ impl Checkbox {
         };
         let mark = match self.glyph {
             Some(g) => icon(g, 14.0),
+            None if self.indeterminate => icon(k.glyph.dash, 10.0),
             None => icon(k.glyph.check, 10.0),
         };
         let mut control = el()
